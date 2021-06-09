@@ -1,5 +1,5 @@
 :root {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 body {
@@ -9,9 +9,13 @@ body {
     margin: 0;
 }
 
-h1{font-family: "Playfair Display";
-font-size: 2em;
-color:#192E10;}
+h1 {
+    font-family: "Playfair Display";
+    font-size: 2em;
+    color: #192E10;
+    margin:0;
+    padding:0;
+}
 
 h2 {
     font-family: 'Playfair display';
@@ -34,8 +38,11 @@ h4 {
     color: #192E10;
 }
 
-.itemParagraph {
+p {
     font-family: 'Nunito Sans';
+    font-weight: 400;
+    font-kerning: 5px;
+    color: #192E10;
 }
 
 .intro {
@@ -47,7 +54,6 @@ h4 {
     color: #f7f7f7;
     margin-top: -40px;
     padding-bottom: 40px;
-
 }
 
 .moreinfo {
@@ -57,6 +63,10 @@ h4 {
     line-height: 133%;
     margin-bottom: 38px;
     color: #f7f7f7;
+}
+
+.grid_item_1 {
+    width: 45%
 }
 
 .subhead {
@@ -72,45 +82,58 @@ ul {
     position: bottom;
     padding: 0;
     margin: 0;
-    height: 88px;
     font-family: 'Playfair display';
     font-size: 1.5em;
     text-align: right;
 }
+li {
+    display: inline;
+    padding-right: 88px;
+}
+
+.logo-wrapper{
+    margin-left: 100px;
+}
 
 .nav {
-    background-color: #FCF4EB;
+    display:flex;
+    justify-content: space-between;
+    background-color: #FCF7F2;
     color: #192E10;
     padding-top: 50px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
+    height: 72px;
     margin-bottom: 93px;
     margin-top: 0;
     margin-left: 0;
-    box-shadow: 0px 3px 3px lightgray;
+    box-shadow: 0px 4px 4px #30302f;
 }
 
-li {
-    display: inline;
-    padding-right: 88px;
-}
-
-button {
+.primary-button {
     background-color: #40AAE5;
     color: #f4f4f4;
     border: none;
     border-radius: 8px;
     box-sizing: border-box;
+    max-width: 350px;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 800;
     font-size: 18px;
-    letter-spacing: .08em;
+    letter-spacing: .01em;
     padding-right: 35px;
     padding-left: 35px;
     padding-top: 12px;
     padding-bottom: 12px;
+    transition: ease-in .2s;
+}
+
+.primary-button:hover {
+    background-color: rgb(3, 146, 235);
+    color: #f4f4f470;
+
 }
 
 .secondary-button {
@@ -130,25 +153,30 @@ button {
     padding-left: 35px;
     padding-top: 12px;
     padding-bottom: 12px;
+    transition: ease-in .2s;
+}
+.secondary-button:hover{
+    background-color: #c1b0a150;
 }
 
-.grid_item_2 {grid-column-start: 2;
-    align-content:center;
-    justify-content: right;
-    position:static;
-    top:50%;
+.grid_item_2 {
+    
+    align-content: center;
+    justify-content: center;
+    position: static;
+    top: 50%;
     left: 50%
 }
 
 .mylogo {
     max-width: 50%;
-    padding-left: 15%;
 }
 
 .featured {
     padding-left: 100px;
     padding-bottom: 20px;
-    background: #FCF4EB;
+    padding-top: 20px;
+    background: #FCF7F2;
     border-top-left-radius: 80px;
     border-bottom-right-radius: 80px;
 }
@@ -161,28 +189,32 @@ button {
 
 .item1 {
     max-width: 25em;
-    height:632px;
+    height: 632px;
     display: grid;
     grid-template-rows: auto auto auto auto;
 }
+
 .item2 {
     max-width: 25em;
     height: 632px;
     display: grid;
     grid-template-rows: auto auto auto auto;
 }
+
 .item3 {
     max-width: 25em;
     height: 632px;
     display: grid;
     grid-template-rows: auto auto auto auto;
 }
+
 .item4 {
     max-width: 25em;
     height: 632px;
     display: grid;
     grid-template-rows: auto auto auto auto;
 }
+
 
 .a {
     padding-top: 40px;
@@ -193,18 +225,20 @@ button {
 .item_grid_container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50% 1fr 2fr 1fr;
     padding-top: 10px;
     margin-bottom: 0;
     column-gap: 3em;
-} 
+}
 
 .Hero_Grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: space-around;
     margin-bottom: 120px;
     margin-top: 250px;
     margin-left: 100px;
-    column-gap: 10em;
+    margin-right: 100px;
+    column-gap: 2em;
     position: sticky;
     top: 250px;
     z-index: -1;
@@ -214,34 +248,43 @@ button {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10em;
-    justify-items: center;
+    padding-right:100px;
+    padding-left:100px;
     align-items: center;
+    justify-items: center;
 }
 
 .logo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 5em;
+    display: flex;
+    justify-items: space-evenly;
+}
+.logo-grid-item{
+    margin: 0 8px;
 }
 
-.image-container{ max-width: 350px;}
-
+.image-container {
+    max-width: 350px;
+}
 
 .more-projects {
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     padding-bottom: 20px;
+    padding-top: 60px
 }
 
-.more-projects1 {
-    margin-right: 5em;
+.more-projects-container {
+    display:flex;
+    justify-content: flex-end;
+    margin-right: 100px;
     margin-top: 40px;
 }
 
-.projects_page_grid{
+.projects_page_grid {
     display: grid;
     margin-top: 56px;
-    grid-template-columns:repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     row-gap: 96px;
 }
@@ -253,10 +296,9 @@ button {
 
 .footer {
     background-color: #091503;
-    height: 246px;
-    padding-top: 88px;
-    padding-right: 100px;
-    padding-right: 100px;
+    height: 160px;
+    padding-top: 72px;
+    
 }
 
 .footername {
@@ -271,4 +313,123 @@ button {
     font-size: 16px;
     color: #f6f6f6;
     font-weight: 400;
+}
+
+.contact {
+    padding-top: 170px;
+    background-color: #FCF7F2;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+
+.contact-container {
+    display: grid;
+    padding-bottom: 48px;
+    margin-top: 40px;
+    max-width: 100%;
+    grid-gap: 32px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: .30fr 1fr .70fr;
+    grid-template-areas: 
+    "name email subject"  
+    "message message message" 
+    "button button button"
+}
+
+#name {
+    grid-area: name;
+    display: flex;
+    flex-direction: column;
+    max-height: 70px;
+    min-width: 120px;
+}
+
+#email {
+    grid-area: email;
+    display: flex;
+    flex-direction: column;
+    max-height: 70px;
+    min-width: 120px;
+}
+
+#subject {
+    grid-area: subject;
+    display: flex;
+    flex-direction: column;
+    max-height: 70px;
+    min-width: 120px;
+}
+
+#message {
+    grid-area: message;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding-left: 20%;
+    padding-right: 20%;
+    min-width: 120px;
+}
+
+#button-container {
+    grid-area: button;
+    display: flex;
+    justify-content:center;
+    align-self: flex-start;
+    max-height: 70px;
+    min-width: 120px;
+}
+
+input {
+    width: 100%;
+    min-height: 48px;
+    border: transparent;
+    border-radius: 8px;
+    margin-top: 8px;
+    font-size: 1em;
+    text-indent: 16px;
+    outline: none;
+}
+
+textarea{
+width:100%;
+height: 200px;    
+border: transparent;
+border-radius: 8px;
+margin-top: 8px;
+font-size: 1em;
+font-family: "Nunito Sans";
+text-indent: 16px;
+outline: none;
+resize: none;
+}
+
+label{
+    font-family: "Nunito Sans";
+    font-weight: 600;
+    color: #192E10;
+}
+
+@media screen and (max-width: 600px){
+    .contact-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: .25fr .25fr .25fr 1fr .25fr;
+        grid-template-areas:
+        "name"
+        "email"
+        "subject"
+        "message"
+        "button"
+    }
+.contact{
+    padding-top: 35%;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+    #message{
+        padding-left:1%;
+        padding-right:1%;
+      
+    }
 }
