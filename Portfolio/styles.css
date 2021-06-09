@@ -89,8 +89,11 @@ ul {
 li {
     display: inline;
     padding-right: 88px;
+    transition: linear .15s;
 }
-
+li:hover{
+    color: #D68D1F;
+}
 .logo-wrapper{
     margin-left: 100px;
     align-items: left;
