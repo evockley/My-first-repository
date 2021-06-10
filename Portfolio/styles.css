@@ -3,7 +3,7 @@
 }
 
 body {
-    background-image: linear-gradient(180deg, #192E10, #091503);
+    background-image: linear-gradient(180deg, #192E10, #091503, #192E10);
     background-repeat: no-repeat;
     width: vw;
     margin: 0;
@@ -13,15 +13,14 @@ h1 {
     font-family: "Playfair Display";
     font-size: 2em;
     color: #192E10;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 
 h2 {
     font-family: 'Playfair display';
     font-size: 1.7em;
     font-weight: 600;
-    padding-bottom: 16px;
     color: #192E10;
 }
 
@@ -53,7 +52,7 @@ p {
     letter-spacing: .05em;
     color: #f7f7f7;
     margin-top: -40px;
-    padding-bottom: 40px;
+    padding-bottom: 10px;
 }
 
 .moreinfo {
@@ -69,11 +68,20 @@ p {
     width: 45%
 }
 
+.grid_item_2 {
+    width: 45%;
+}
+
+.mylogo {
+    position: absolute;
+    left: 63%;
+    max-width: 50%;
+}
+
 .subhead {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 400;
     font-size: 18px;
-    line-height: 133%;
     color: #192E10;
 }
 
@@ -83,26 +91,29 @@ ul {
     padding-right: 56px;
     margin: 0;
     font-family: 'Playfair display';
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-align: right;
 }
+
 li {
     display: inline;
     padding-left: 44px;
     padding-right: 44px;
     transition: linear .15s;
 }
-li:hover{
+
+li:hover {
     color: #D68D1F;
 }
-.logo-wrapper{
+
+.logo-wrapper {
     margin-left: 100px;
     align-items: left;
     justify-content: center;
 }
 
 .nav {
-    display:flex;
+    display: flex;
     justify-content: space-between;
     background-color: #FCF7F2;
     color: #192E10;
@@ -116,9 +127,11 @@ li:hover{
     margin-top: 0;
     margin-left: 0;
     box-shadow: 0px 4px 2px #FCF7F2;
+    z-index: 1;
 }
-.nav li{
-    cursor:pointer;
+
+.nav li {
+    cursor: pointer;
 }
 
 .primary-button {
@@ -142,7 +155,6 @@ li:hover{
 .primary-button:hover {
     background-color: #0392eb;
     color: #f4f4f470;
-
 }
 
 .secondary-button {
@@ -162,14 +174,15 @@ li:hover{
     padding-left: 35px;
     padding-top: 12px;
     padding-bottom: 12px;
+    margin-top: 32px;
     transition: ease-in .2s;
 }
-.secondary-button:hover{
+
+.secondary-button:hover {
     background-color: #c1b0a150;
 }
 
 .grid_item_2 {
-    
     align-content: center;
     justify-content: center;
     position: static;
@@ -177,24 +190,33 @@ li:hover{
     left: 50%
 }
 
-.mylogo {
-    max-width: 50%;
-}
-
 .featured {
-    padding-left: 100px;
-    padding-bottom: 20px;
-    padding-top: 20px;
     background: #FCF7F2;
-    border-top-left-radius: 80px;
-    border-bottom-right-radius: 80px;
+    padding-left: 100px;
+    padding-bottom: 48px;
+    padding-top: 20px;
+    border-top-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    transform: scale(1);
+    z-index: 2;
 }
 
-.item {
+.home-item1 .home-item2 {
     max-width: 25em;
     height: 477px;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
+
+.home-item1{
+    grid-area: "home-item1";
+}
+
+.home-item2{
+    grid-area: "home-item2";
+}
+
 
 .item1 {
     max-width: 25em;
@@ -224,7 +246,6 @@ li:hover{
     grid-template-rows: auto auto auto auto;
 }
 
-
 .a {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -235,6 +256,7 @@ li:hover{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 50% 1fr 2fr 1fr;
+    grid-template-areas: "home-item1 home-item2";
     padding-top: 10px;
     margin-bottom: 0;
     column-gap: 3em;
@@ -243,22 +265,30 @@ li:hover{
 .Hero_Grid {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 120px;
+    margin-bottom: 96px;
     margin-top: 250px;
     margin-left: 100px;
     margin-right: 100px;
     column-gap: 2em;
     position: sticky;
     top: 250px;
-    z-index: -1;
+}
+
+.footer {
+    background-image: linear-gradient(180deg, #192E10, #091503);
+    background-repeat: no-repeat;
+    width: vw;
+    margin: 0;
+    transform: scale(1);
+    padding-top: 80px;
 }
 
 .footer_grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10em;
-    padding-right:100px;
-    padding-left:100px;
+    padding-right: 100px;
+    padding-left: 100px;
     align-items: center;
     justify-items: center;
 }
@@ -268,7 +298,8 @@ li:hover{
     justify-items: space-evenly;
     align-items: center;
 }
-.logo-grid-item{
+
+.logo-grid-item {
     margin: 0 8px;
 }
 
@@ -285,7 +316,7 @@ li:hover{
 }
 
 .more-projects-container {
-    display:flex;
+    display: flex;
     justify-content: flex-end;
     margin-right: 100px;
     margin-top: 40px;
@@ -308,7 +339,6 @@ li:hover{
     background-color: #091503;
     height: 160px;
     padding-top: 72px;
-    
 }
 
 .footername {
@@ -332,7 +362,6 @@ li:hover{
     padding-right: 100px;
 }
 
-
 .contact-container {
     display: grid;
     padding-bottom: 48px;
@@ -341,10 +370,7 @@ li:hover{
     grid-gap: 32px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: .30fr 1fr .70fr;
-    grid-template-areas: 
-    "name email subject"  
-    "message message message" 
-    "button button button"
+    grid-template-areas: "name email subject" "message message message" "button button button"
 }
 
 #name {
@@ -384,7 +410,7 @@ li:hover{
 #button-container {
     grid-area: button;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-self: flex-start;
     max-height: 70px;
     min-width: 120px;
@@ -401,45 +427,143 @@ input {
     outline: none;
 }
 
-textarea{
-width:100%;
-height: 200px;    
-border: transparent;
-border-radius: 8px;
-margin-top: 8px;
-font-size: 1em;
-font-family: "Nunito Sans";
-text-indent: 16px;
-outline: none;
-resize: none;
+textarea {
+    width: 100%;
+    height: 200px;
+    border: transparent;
+    border-radius: 8px;
+    margin-top: 8px;
+    font-size: 1em;
+    font-family: "Nunito Sans";
+    text-indent: 16px;
+    outline: none;
+    resize: none;
 }
 
-label{
+label {
     font-family: "Nunito Sans";
     font-weight: 600;
     color: #192E10;
 }
 
-@media screen and (max-width: 600px){
-    .contact-container{
+@media screen and (max-width: 600px) {
+    .contact-container {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: .25fr .25fr .25fr 1fr .25fr;
-        grid-template-areas:
-        "name"
-        "email"
-        "subject"
-        "message"
-        "button"
+        grid-template-areas: "name" "email" "subject" "message" "button"
     }
-.contact{
-    padding-top: 35%;
-    padding-left: 24px;
-    padding-right: 24px;
+    .contact {
+        padding-top: 35%;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    #message {
+        padding-left: 1%;
+        padding-right: 1%;
+    }
 }
-    #message{
-        padding-left:1%;
-        padding-right:1%;
-      
+
+@media (max-width:1152px) {
+    .intro {
+        padding-bottom: 10px;
+        font-size: 22px;
     }
+    .moreinfo {
+        font-size: 16px;
+        line-height: 120%;
+    }
+    ul {
+        font-size: 1em;
+        padding-right: 40px;
+    }
+}
+
+@media (max-width:768px) {
+.intro{
+    padding-bottom: 64px;
+    margin:0;
+}
+    .moreinfo {
+        display: none
+    }
+
+    .Hero_Grid {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 120px;
+        margin-left: 48px;
+        margin-right: 48px;
+        row-gap: 2em;
+        position: sticky;
+        top: 120px;
+    
+    }
+
+    .grid_item_1{
+        width: 100%;
+    }
+
+    .grid_item_2{
+width: 100%;
+height: 200px;
+    }
+
+    .mylogo{
+        position:absolute;
+        left:-55;
+        transform:scale(.40);
+    }
+
+    .featured {
+        padding-left: 48px;
+        padding-right: 48px;
+        padding-bottom: 48px;
+        padding-top: 4px;
+        border-top-left-radius: 60px;
+        border-bottom-right-radius: 60px;
+        transform: scale(1);
+        z-index: 2;
+    }
+
+    .item_grid_container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+        "home-item1"
+        "home-item2";
+        padding-top: 10px;
+        margin-bottom: 0;
+        row-gap: 5em;
+    }
+
+    .footer_grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: .5em;
+        padding-right: 100px;
+        padding-left: 100px;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .footer{
+        padding-top: 16px;
+    }
+    .footername {
+        font-family: 'Nunito sans';
+        font-size: 12px;
+        color: #f6f6f6;
+        font-weight: 600;
+    }
+    .footertext {
+        font-family: 'Nunito sans';
+        font-size: 12px;
+        color: #f6f6f6;
+        font-weight: 400;
+    }
+        
+    
 }
